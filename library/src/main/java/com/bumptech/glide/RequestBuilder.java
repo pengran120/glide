@@ -654,6 +654,9 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
   public RequestBuilder<TranscodeType> clone() {
     RequestBuilder<TranscodeType> result = super.clone();
     result.transitionOptions = result.transitionOptions.clone();
+    result.requestListeners = new ArrayList<>(result.requestListeners);
+    result.thumbnailBuilder = result.thumbnailBuilder.clone();
+    result.errorBuilder = result.errorBuilder.clone();
     return result;
   }
 
